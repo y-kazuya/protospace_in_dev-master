@@ -1,0 +1,12 @@
+//inputfiledの設定基幹設定
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
