@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :destroy]
 
   def index
     @prototypes = Prototype.all
@@ -21,6 +21,13 @@ class PrototypesController < ApplicationController
 
   def show
   end
+
+  def destroy
+    @prototype.destroy
+    redirect_to :root, alert: 'Prototype was successfully deleted'
+  end
+
+
 
   private
 
