@@ -26,4 +26,6 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'paperclip'
 gem 'kaminari'
