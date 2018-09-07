@@ -1,0 +1,43 @@
+//投稿詳細ページ 
+.proto-page {
+	.user-nav {
+		padding: 50px 0;
+
+		.media-object {
+			border-radius: 50%;
+		}
+
+		button {
+			padding-right: 35px;
+
+			img {
+				max-width: 18px;
+				margin-right: 5px;
+			}
+
+			.num {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.proto-description {
+		padding: 20px 0 10px;
+	}
+
+	.proto-comments {
+		h4 {
+			padding-bottom: 20px;
+		}
+
+		form {
+			margin: 40px 0;
+		}
+
+		.form-group {
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+}

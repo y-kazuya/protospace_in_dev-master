@@ -1,0 +1,33 @@
+//1つの投稿、インデックスでの表示　部分てんぷ
+.proto-content {
+	.thumbnail {
+		border-radius: 0;
+		padding: 0;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 1.6rem;
+	}
+
+	.proto-meta {
+		overflow: hidden;
+		font-size: 1.2rem;
+		padding: 10px 0;
+
+		.proto-user {
+			float: left;
+		}
+
+		.proto-posted {
+			float: right;
+		}
+	}
+
+	.btn {
+		font-size: 1rem;
+		padding: 5px;
+		min-width: 50px;
+		border: 1px solid $shadow;
+	}
+}
