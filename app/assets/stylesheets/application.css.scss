@@ -1,3 +1,26 @@
+//config&mixin
+@import "./config/colors";
+@import "./config/variable";
+@import "./mixin/mixin";
+//モジュールたち！
+@import "./modlues/buttons/buttons";
+@import "./modlues/buttons/effects";
+@import "./modlues/devise/new&edit";
+@import "./modlues/devise/signin";
+@import "./modlues/forms/base";
+@import "./modlues/parts/a_post";
+@import "./modlues/parts/backpicture";
+@import "./modlues/parts/tag";
+@import "./modlues/parts/vars";
+@import "./modlues/prototype/new";
+@import "./modlues/prototype/show";
+@import "./modlues/users/show";
+@import "./modlues/base";
+@import "./modlues/flash";
+@import "./modlues/hedder";
+//venderたち！
+@import "./vender/animate";
+@import "./vender/font";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "protospace";
+
