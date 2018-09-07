@@ -1,0 +1,77 @@
+
+//form ユーザー設定&新規登録
+.user-new {
+  padding-top: 20px;
+
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    border: 0;
+    width: 100%;
+    line-height: 3;
+    transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -webkit-transition: all .15s ease-in-out;
+    background-color: transparent;
+    margin-bottom: 20px;
+
+    &:hover {
+      color: lighten(#000,10%);
+      box-shadow: 0 1px 1px $shadow;
+    }
+
+    &.user-name {
+      margin-top: 20px;
+    }
+  }
+
+  .user-email,
+  .user-name,
+  .user-password {
+    line-height: 60px;
+    font-size: 24px;
+  }
+
+  .user-image {
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    position: relative;
+    background-color: $white;
+    background-size: cover;
+
+    button {
+      font-size: 9px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 0;
+      display: block;
+      padding: 3px;
+      min-width: 75px;
+      text-transform: capitalize;
+    }
+
+    input {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 75px;
+      height: 75px;
+      opacity: 0;
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    }
+  }
+  .user-btn {
+    max-width: 300px;
+    margin: auto;
+  }
+}

@@ -1,0 +1,19 @@
+//ノーマルボタン！ 基本白で、ホバーでグレー
+.btn-default {
+	border: 1px solid $shadow;
+	&:hover {
+		border: 1px solid $shadow;
+		background: $shadow;
+	}
+}
+//ボタン設定！ ホバーで薄くする奴！
+.btn-primary {
+	background-image: linear-gradient(-180deg, #67ABFA 0%, #4A8DDC 100%);
+	border: 1px solid $after_blue;
+	border-radius: 3px;
+
+	&:hover {
+		border: 1px solid $after_blue;
+		opacity: 0.9;
+	}
+}
