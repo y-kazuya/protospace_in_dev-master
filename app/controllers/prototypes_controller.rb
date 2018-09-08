@@ -23,7 +23,7 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    @prototype.destroy
+    @prototype.destroy 
     redirect_to :root, alert: 'Prototype was successfully deleted'
   end
 
