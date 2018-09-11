@@ -1,5 +1,6 @@
 $(function(){
   // main_image_preview/////////////////
+  var max_subs = 3
   $("#main_image_uploader").find("input").on("change", function(e) {
     var file = e.target.files[0];
     var reader = new FileReader();
@@ -38,7 +39,8 @@ $(function(){
     })
   })
 
-  //add_picture
+  //add_picture///////////////////////////////////////////////
+    //画像投稿フォームの差し込み
   function buildHtml(i){
     var html = `<li class="list-group-item col-md-4 new_sub edit_subs" style="display:none;">
         <div class="image-upload">
@@ -51,6 +53,7 @@ $(function(){
     return html;
   }
 
+    //画像追加ボタンの差し込み
   function buildAddSub(){
     var add_sub  = `<li class="list-group-item col-md-4" id="add_sub" >
         <div>
@@ -60,9 +63,10 @@ $(function(){
 
     return add_sub;
   }
+    //条件を見極めて、画像フォームと画像追加ボタンを差し込んでうr
   if (location.pathname.match(/\/prototypes\/\d+\/edit/)){
     var sub_count = $(".edit_subs").length
-    var need_new = 3 - sub_count
+    var need_new = max_subs - sub_count
     if (sub_count == 0){
       var num = 1
     }
@@ -82,11 +86,11 @@ $(function(){
     }
   }
 
-  $("body").on("click" ,$("#add_sub"), function(){
+  $("#add_sub").on("click", function(){
     var target = $(".edit_subs")[sub_count];
     $(target).css("display", "block");
     sub_count += 1;
-    if(sub_count == 3){
+    if(sub_count == max_subs){
       $("#add_sub").css("display", "none");
     }
   })
