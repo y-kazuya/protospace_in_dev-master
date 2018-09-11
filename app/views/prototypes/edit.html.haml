@@ -10,8 +10,8 @@
       .row
         .col-md-12
           %h4 Main Thumbnail
-          .cover-image-upload#main_image_uploader
-            = image_tag(@prototype.set_main_thumbnail, style: "width: 100%; height: 100%;", id: "main_image")
+          .cover-image-upload.main_image_uploader
+            = image_tag(@prototype.set_main_thumbnail, style: "width: 100%; height: 100%;", class: "main_image")
             = f.fields_for :captured_images  do |image|
               - if image.index == 0
                 = image.file_field :content, value: image.object.content
@@ -19,12 +19,12 @@
 
         .col-md-12
           %h4 Sub Thumbnails
-          %ul.proto-sub-list.list-group#sub_image_uploder
+          %ul.proto-sub-list.list-group.sub_image_uploder
             = f.fields_for :captured_images do |image|
               - if image.object != @prototype.captured_images[0]
                 %li.list-group-item.col-md-4.edit_subs
                   .image-upload
-                    = image_tag(image.object.content, style: "width: 100%; height: 100%;", id: "sub_image")
+                    = image_tag(image.object.content, style: "width: 100%; height: 100%;", class: "sub_image")
                     = image.file_field :content
                     = image.hidden_field :status, value: "sub"
 

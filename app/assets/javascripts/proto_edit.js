@@ -1,10 +1,9 @@
 $(function(){
   // main_image_preview/////////////////
   var max_subs = 3
-  $("#main_image_uploader").find("input").on("change", function(e) {
+  $(".main_image_uploader").find("input").on("change", function(e) {
     var file = e.target.files[0];
     var reader = new FileReader();
-
     if(file.type.indexOf("image") != 0){
       alert("画像ファイルを選択してください");
       return false;
@@ -12,7 +11,7 @@ $(function(){
 
     reader.onload = (function(){
       return function(e){
-        $("#main_image").attr("src", e.target.result);
+        $(".main_image").attr("src", e.target.result);
       };
     })(file);
     reader.readAsDataURL(file);
@@ -20,10 +19,10 @@ $(function(){
 
   // sub_image_preview///////////////////////
   $('.list-group').on("click", $(this).find(".list-group-item"), function() {
-    $("#sub_image_uploder").find("input").on("change", function(e) {
+    $(".sub_image_uploder").find("input").on("change", function(e) {
       var file = e.target.files[0]
       var reader = new FileReader();
-      var target = $(this).siblings("#sub_image");
+      var target = $(this).siblings(".sub_image");
 
       if(file.type.indexOf("image") != 0){
         alert("画像ファイルを選択してください");
