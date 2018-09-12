@@ -27,6 +27,9 @@ class PrototypesController < ApplicationController
     redirect_to :root, alert: 'Prototype was successfully deleted'
   end
 
+  def newest
+    @prototypes = Prototype.all.order(created_at: "DESC")
+  end
 
 
   private
