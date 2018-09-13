@@ -2,7 +2,8 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :destroy]
 
   def index
-    @prototypes = Prototype.all
+    #現状Like数でのソートになっていません。Like機能追加後に修正します。
+    @prototypes = Prototype.all.page(params[:page]).per(5)
   end
 
   def new
@@ -28,7 +29,7 @@ class PrototypesController < ApplicationController
   end
 
   def newest
-    @prototypes = Prototype.all.order(created_at: "DESC")
+    @prototypes = Prototype.all.order(created_at: "DESC").page(params[:page]).per(5)
   end
 
 
