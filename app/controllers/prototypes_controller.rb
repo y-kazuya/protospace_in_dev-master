@@ -2,7 +2,8 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :destroy, :edit, :update]
 
   def index
-    @prototypes = Prototype.page(params[:page]).per(8).order("created_at DESC")
+    #現状Like数でのソートになっていません。Like機能追加後に修正します。
+    @prototypes = Prototype.page(params[:page]).per(8).order("created_at ASC")
   end
 
   def new
@@ -37,6 +38,9 @@ class PrototypesController < ApplicationController
     redirect_to :root, alert: 'Prototype was successfully deleted'
   end
 
+  def newest
+    @prototypes = Prototype.page(params[:page]).per(8).order("created_at DESC")
+  end
 
 
   private
