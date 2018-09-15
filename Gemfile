@@ -14,7 +14,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'carrierwave'
+gem 'carrierwave', '~>1.0'
 gem 'rmagick'
 
 group :development, :test do
@@ -29,5 +29,3 @@ end
 
 gem 'paperclip'
 gem 'kaminari'
-
-
