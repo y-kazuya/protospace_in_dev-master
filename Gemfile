@@ -29,4 +29,5 @@ end
 
 gem 'paperclip'
 gem 'kaminari'
-gem 'rails_12factor'
+
+
