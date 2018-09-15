@@ -17,7 +17,6 @@ gem 'devise'
 # gem 'carrierwave'
 gem 'rmagick'
 
-gem 'fog', group: :production
 gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
