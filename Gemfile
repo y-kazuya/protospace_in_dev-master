@@ -31,3 +31,4 @@ end
 
 gem 'paperclip'
 gem 'kaminari'
+gem 'heroku'
