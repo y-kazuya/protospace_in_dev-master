@@ -5,7 +5,7 @@
     .proto-comment--comments--comment--right
       .proto-comment--comments--comment--right__user-name
         = comment.user.name
-        -if current_user.id === comment.user.id && user_signed_in?
+        -if user_signed_in? && current_user.id == comment.user.id
           .btn.btn-default.delete_btn
             Delete
           .btn.btn-default.edit_btn
