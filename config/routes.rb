@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :prototypes do
     resources :captured_images, only: [:create, :update, :destroy]
+    resources :comments , only: [:create, :edit, :update, :destroy]
   end
   resources :users, only: [:show, :edit, :update]
 end

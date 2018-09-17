@@ -1,0 +1,100 @@
+
+//コメント！
+.proto-comment{
+  color: black;
+  font-weight: 300;
+  padding-left: 15px;
+  &--head{
+
+  }
+
+  &--comments{
+    margin:23px auto;
+
+    &--comment{
+      min-height: 100px;
+      margin-top: 10px;
+      &__avater{
+        background-color: red;
+        float:left;
+        height: $image-box-witdh;
+        width: $image-box-witdh;
+
+      }
+
+      &--right{
+
+        padding-left: $image-box-witdh + 10px;
+
+        &__user-name{
+          font-size: 18px;
+          .edit_btn{
+            float: right;
+
+          }
+          .submit_btn{
+            display: none;
+            float: right;
+
+          }
+          .delete_btn{
+            border:1px solid red;
+            float: right;
+            margin-left: 20px
+
+          }
+        }
+
+        &__text{
+          padding-top: 19px;
+
+        }
+        #comment_content{
+          display: none;
+          width: 100%;
+          border: none;
+          border-bottom: 1px dashed red;
+          background-color: #EEEEEE;
+        }
+      }
+    }
+
+  }
+
+  &--footer{
+    margin-bottom: 20px;
+    &__head{
+      padding-bottom: 20px;
+
+    }
+
+    &__form{
+      height: 76px;
+      &__input{
+        height: 76px;
+        width: 660px;
+        font-size: 20px;
+        float: left;
+        textarea{
+          width: 100%;
+          height: 100%
+        }
+
+      }
+
+      &__submit{
+        width: 150px;
+        height: 50px;
+        margin: 0 0  0px 20px;
+
+      }
+
+    }
+
+  }
+}
+
+//タイトル共通
+.comment-head{
+  font-size: 30px;
+}
