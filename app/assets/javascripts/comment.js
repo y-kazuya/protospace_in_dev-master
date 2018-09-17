@@ -72,13 +72,13 @@ $(function(){
           <div class="proto-comment--comments--comment--right">
             <div class="proto-comment--comments--comment--right__user-name">
               ${data.user_name}
+              <div class="btn btn-default delete_btn">
+                Delete
+              </div>
               <div class="btn btn-default edit_btn">
                 edit
               </div>
               <input type="submit" name="commit" value="Update" class="btn btn-default submit_btn">
-              <div class="btn btn-default delete_btn">
-                Delete
-              </div>
             </div>
             <div class="proto-comment--comments--comment--right__text">
               ${data.comment}
