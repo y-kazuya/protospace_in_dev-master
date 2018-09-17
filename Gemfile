@@ -14,8 +14,10 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'rmagick'
+
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   gem 'byebug'
