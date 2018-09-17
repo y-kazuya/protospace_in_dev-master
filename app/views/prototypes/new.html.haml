@@ -37,5 +37,18 @@
         .col-md-12
           %h4 Concept
           = f.text_area :concept, require: true, placeholder: "Input Concept"
+        .col-md-12
+          %h4
+            Tag List
+          .row
+          /*お気に入り見て
+          = f.fields_for :tag_prototypes , @prototype.tag_prototypes do |t|
+            .col-md-3
+              = t.text_field :name, placeholder: "New Tag"
+            .col-md-3
+              = t.text_field :name, placeholder: "New Tag"
+            .col-md-3
+              = t.text_field :name, placeholder: "New Tag"
+
       .row.text-center.proto-btn
         = f.submit "PUBLISH", id: "button", class: "btn btn-lg btn-primary btn-block"

@@ -21,6 +21,7 @@ has_many :prototypes, likes, comments
 
 ```
 has_many :captured_images, comments, likes
+has_many :tag_prototypes
 has_many :tags , through :tag_prototype
 belongs_to :user
 ```
@@ -73,6 +74,7 @@ belongs_to :user, :prototype
 ### association
 
 ```
+has_many :tag_prototypes
 has_many :prototypes, through :tag_prototype
 ```
 

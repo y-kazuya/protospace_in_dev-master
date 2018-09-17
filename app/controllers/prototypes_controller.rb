@@ -9,11 +9,15 @@ class PrototypesController < ApplicationController
   def new
     @prototype = Prototype.new
     @prototype.captured_images.build
+        # 関連オブジェクトを3回build
+    3.times{
+      @prototype.tag_prototypes.build
+    }
   end
 
   def create
     @prototype = Prototype.new(prototype_params)
-    if @prototype.save
+    if @prototype.save #タグも保存したいのでtagにすべき？
       redirect_to :root, notice: 'New prototype was successfully created'
     else
       render :new
@@ -55,7 +59,8 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status]
+      captured_images_attributes: [:content, :status],
+      tag_prototypes_attributes: [:prototype_id, :tag_id]
     )
   end
 
