@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20180917052926) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
   add_foreign_key "captured_images", "prototypes"
   add_foreign_key "prototypes", "users"
 end
