@@ -1,0 +1,9 @@
+.container
+  .row
+    .tags-list
+      %h2
+        Tags-list
+        %ul
+          - @tags.each do |tag|
+            %li.list-box
+              = link_to tag.name ,"tags/" + tag.name, class: "btn btn-default "
