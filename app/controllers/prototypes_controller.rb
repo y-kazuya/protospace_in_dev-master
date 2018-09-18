@@ -25,6 +25,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    prototype = Prototype.find(params[:id])
+    @tags = prototype.tags
   end
 
   def edit
