@@ -61,7 +61,7 @@ $(function(){
   //非同期コメント追加
 
   function buildHtml(data){
-    var html = `<form class="comment" id="edit_comment_${data.id}" action="/prototypes/44/comments/${data.id}" accept-charset="UTF-8" method="post">
+    var html = `<form class="comment" id="edit_comment_${data.id}" action="/prototypes/${data.prototype_id}/comments/${data.id}" accept-charset="UTF-8" method="post">
         <input name="utf8" type="hidden" value="✓">
         <input type="hidden" name="_method" value="patch">
         <input type="hidden" name="authenticity_token" value="m9hwCNcqUTCP7vpb391VnKTq9mZKQ21wi8FFtjWhb/an+g2TXV+6G5+Q6qzxAq8eKsOKNszAtA9WNS5wXmfh/w==">
