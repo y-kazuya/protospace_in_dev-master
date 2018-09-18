@@ -18,6 +18,15 @@
               %ul
                 %li= link_to '編集', "/prototypes/#{@prototype.id}/edit", method: :get
                 %li= link_to '削除', "/prototypes/#{@prototype.id}", method: :delete
+.col-md-6.clearfix
+  .likes-box
+    %button.btn.btn-default.decrement-button#like-button
+      %img{
+      src="/assets/icon_heart_red-65035f3e2f106cde180f2c1448bce917839fc297e339fcbcd65cf41eb92e8ec1.svg" alt="Icon heart red 65035f3e2f106cde180f2c1448bce917839fc297e339fcbcd65cf41eb92e8ec1"
+      }
+      Like
+      %span.num#like-sum 99
+
   .row
     .col-md-9.image-box
       = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
