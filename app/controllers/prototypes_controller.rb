@@ -25,8 +25,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    prototype = Prototype.find(params[:id])
-    @tags = prototype.tags
+    @tags = Prototype.find(params[:id]).tags
   end
 
   def edit
@@ -72,7 +71,8 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status, :id]
+      captured_images_attributes: [:content, :status, :id],
+      tags_attributes: [:name]
     )
   end
 end
