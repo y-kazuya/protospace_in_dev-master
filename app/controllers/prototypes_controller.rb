@@ -10,9 +10,9 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new
     @prototype.captured_images.build
         # 関連オブジェクトを3回build
-    3.times{
-      @prototype.tag_prototypes.build
-    }
+    3.times do
+      @prototype.tags.build
+    end
   end
 
   def create
@@ -60,7 +60,7 @@ class PrototypesController < ApplicationController
       :concept,
       :user_id,
       captured_images_attributes: [:content, :status],
-      tag_prototypes_attributes: [:prototype_id, :tag_id]
+      tags_attributes: [:name]
     )
   end
 
