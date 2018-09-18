@@ -4,7 +4,7 @@
       .media
         .media-left
           = link_to user_path(@prototype.user) do
-            = image_tag(@prototype.user.avatar.thumb, alt: "profile_photo", class: "media-object", style: "width: 64px; height: 64px;")
+            = image_tag(set_avater(@prototype), alt: "profile_photo", class: "media-object", style: "width: 64px; height: 64px;")
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
@@ -42,3 +42,26 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+  .row.proto-comment
+    .proto-comment--head.comment-head
+      Comments (
+      %span#comment_count
+        = @comments.count
+      )
+    .proto-comment--comments
+      = render partial: './comments/comment', collection: @comments
+
+
+    .proto-comment--footer
+      .proto-comment--footer__head.comment-head
+        Write a comment
+      .proto-comment--footer__form
+        = form_for [@prototype, @comment] do |f|
+          .proto-comment--footer__form__input
+            = f.text_area :content, placeholder: 'Your Comment'
+          - if user_signed_in?
+            = f.submit "COMMENT", class: "proto-comment--footer__form__submit btn btn-primary"
+          - else
+            = link_to "COMMENT", new_user_session_path, class: "proto-comment--footer__form__submit btn btn-primary"
+
+

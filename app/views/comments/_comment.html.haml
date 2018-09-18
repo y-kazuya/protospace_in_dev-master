@@ -1,0 +1,17 @@
+= form_for [@prototype, comment],html: {class:"comment"} do |f|
+  .proto-comment--comments--comment
+    .proto-comment--comments--comment__avater
+      = image_tag(set_avater(comment), alt: "profile", class: "user-avater", style: "width: 64px; height: 64px;")
+    .proto-comment--comments--comment--right
+      .proto-comment--comments--comment--right__user-name
+        = comment.user.name
+        -if user_signed_in? && current_user.id == comment.user.id
+          .btn.btn-default.delete_btn
+            Delete
+          .btn.btn-default.edit_btn
+            edit
+          = f.submit "Update", class: "btn btn-default submit_btn"
+
+      .proto-comment--comments--comment--right__text
+        = comment.content
+      = f.text_field :content, value: comment.content

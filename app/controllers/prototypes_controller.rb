@@ -21,6 +21,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @prototype.comments.order(created_at: :DESC).includes(:user)
   end
 
   def edit
@@ -32,6 +34,7 @@ class PrototypesController < ApplicationController
     else
       render :edit
     end
+
   end
   def destroy
     @prototype.destroy
