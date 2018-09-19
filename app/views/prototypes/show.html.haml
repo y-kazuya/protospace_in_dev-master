@@ -40,4 +40,4 @@
       %ul.proto-tag-list.list-inline
         - @tags.each do |tag|
           %li
-            = link_to tag.name ,"tags/" + tag.name, class: "btn btn-default"
+            = link_to tag.name ,tag_path(tag.id), class: "btn btn-default"

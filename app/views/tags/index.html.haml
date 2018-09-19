@@ -6,4 +6,4 @@
         %ul
           - @tags.each do |tag|
             %li.list-box
-              = link_to tag.name ,"tags/" + tag.name, class: "btn btn-default "
+              = link_to tag.name ,tag_path(tag.id), class: "btn btn-default "
