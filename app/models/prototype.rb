@@ -2,9 +2,9 @@ class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :captured_images, dependent: :destroy
   has_many :tag_prototypes
-  has_many :tags, through: :tag_prototypes
+  has_many :tags, through: :tag_prototypes  
   accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images
-  accepts_nested_attributes_for :tags ,reject_if: :reject_tags_blank
+  accepts_nested_attributes_for :tags ,reject_if: :reject_tags_blank && :reject_tags_duplicate
   validates :title,
             :catch_copy,
             :concept,
@@ -23,6 +23,9 @@ class Prototype < ActiveRecord::Base
   end
   def reject_tags_blank(attributed)
     attributed['name'].blank?
+  end
+  def reject_tags_duplicate(attributed)
+    Tag.exists?(name:attributed['name'])
   end
 
 end
