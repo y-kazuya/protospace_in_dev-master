@@ -1,5 +1,8 @@
 Structure of DataBase
 
+自動でぷ
+
+
 ## User
 ### associationはあああ
 
