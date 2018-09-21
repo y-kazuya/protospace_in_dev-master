@@ -1,4 +1,13 @@
 .col-sm-4.col-md-3.proto-content
+  - if user_signed_in? && current_user.id == prototype.user_id
+    .dropdown.drop_menu_location
+      %button#dropdownMenu.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+        Action
+      %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+        %li
+          = link_to "Delete", prototype_path(prototype), method: :delete
+        %li
+          = link_to "EDIT", edit_prototype_path(prototype)
   .thumbnail
     = link_to image_tag(prototype.set_main_thumbnail), prototype_path(prototype)
     .caption

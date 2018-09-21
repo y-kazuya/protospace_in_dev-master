@@ -1,8 +1,18 @@
 //1つの投稿、インデックスでの表示　部分てんぷ
 .proto-content {
+	position: relative;
+
+	.dropdown{
+		position: absolute;
+		top: 11px;
+		left: 24px;
+
+	}
+
 	.thumbnail {
 		border-radius: 0;
 		padding: 0;
+		float: left;
 	}
 
 	h3 {
