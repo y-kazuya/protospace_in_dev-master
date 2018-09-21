@@ -1,7 +1,7 @@
 Structure of DataBase
 
 ## User
-### association
+### associationはあああ
 
 ```
 has_many :prototypes, likes, comments

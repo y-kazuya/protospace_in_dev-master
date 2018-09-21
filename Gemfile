@@ -28,6 +28,9 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'unicorn'
+end
 
 gem 'paperclip'
 gem 'kaminari'
