@@ -39,3 +39,4 @@ end
 
 gem 'paperclip'
 gem 'kaminari'
+gem 'fog-aws'

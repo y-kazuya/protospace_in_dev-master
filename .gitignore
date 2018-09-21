@@ -43,3 +43,4 @@ bower.json
 .powenv
 
 .vscode/settings.json
+config/secrets.yml
