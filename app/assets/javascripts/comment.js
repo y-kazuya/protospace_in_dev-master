@@ -83,7 +83,7 @@ $(function(){
             <div class="proto-comment--comments--comment--right__text">
               ${data.comment}
             </div>
-            <input value="rer" type="text" name="comment[content]" id="comment_content">
+            <input value="${data.comment}" type="text" name="comment[content]" id="comment_content">
           </div>
         </div>
       </form>`
