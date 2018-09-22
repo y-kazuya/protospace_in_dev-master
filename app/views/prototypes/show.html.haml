@@ -33,9 +33,10 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
-        - @tags.each do |tag|
-          %li
-            = link_to tag.name ,tag_path(tag.id), class: "btn btn-default"
+        %li
+          %a{href: "#", class: "btn btn-default"} iPad
+        %li
+          %a{href: "#", class: "btn btn-default"} wireframe
   .row.proto-comment
     .proto-comment--head.comment-head
       Comments (
@@ -57,4 +58,5 @@
             = f.submit "COMMENT", class: "proto-comment--footer__form__submit btn btn-primary"
           - else
             = link_to "COMMENT", new_user_session_path, class: "proto-comment--footer__form__submit btn btn-primary"
+
 

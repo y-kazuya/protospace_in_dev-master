@@ -9,68 +9,26 @@ class PrototypesController < ApplicationController
   def new
     @prototype = Prototype.new
     @prototype.captured_images.build
-    3.times do
-      @prototype.tags.build
-    end
-    #@tag1 = Tag.new
-    #@tag2 = Tag.new
-    #@tag3 = Tag.new
-    #@tags = [@tag1,@tag2,@tag3]
   end
 
   def create
     @prototype = Prototype.new(prototype_params)
-    n =[]
-    @prototype.tags.each do |t|
-      tag = Tag.find_by(name: t.name)
-      unless tag == nil
-        n << tag
-      else
-        n << t
-      end
-    end
-    @prototype.tags = []
-    n.each do |w|
-      @prototype.tags << w
-    end
-
-
     if @prototype.save
       redirect_to :root, notice: 'New prototype was successfully created'
     else
       render :new
-    end
+     end
   end
 
   def show
-
-    @tags = Prototype.find(params[:id]).tags
     @comment = Comment.new
     @comments = @prototype.comments.order(created_at: :DESC).includes(:user)
   end
 
   def edit
-    PrototypesTag.where(prototype_id:@prototype.id).destroy_all
-    3.times do
-      @prototype.tags.build
-    end
   end
 
   def update
- 
-    n =[]
-    @prototype.tags.each do |t|
-      tag = Tag.find_by(name: t.name)
-      unless tag == nil
-        n << tag
-      else
-        n << t
-      end
-    end
-    @prototype.tags = []
-    n.each do |w|
-      @prototype.tags << w
-    end
     if @prototype.update(prototype_update_params)
       redirect_to root_path, alert: 'Prototype was successfully Update'
     else
@@ -100,8 +58,7 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status],
-      tags_attributes: [:name]
+      captured_images_attributes: [:content, :status]
     )
   end
 
@@ -111,9 +68,7 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status, :id],
-      tags_attributes: [:name,:id]
+      captured_images_attributes: [:content, :status, :id]
     )
   end
-
 end
